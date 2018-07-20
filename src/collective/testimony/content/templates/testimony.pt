@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="collective.testimony">
+  <body>
+    <metal:main fill-slot="main">
+      <div class="content-block">
+        <div class="content-block-container">
+          <div class="content-block-container-background">
+            <div class="content-block-body">
+              <div tal:content="structure context/textual_testimony/output" />
+              <iframe
+                width="540"
+                height="304"
+                src=""
+                tal:attributes="src string:${context/url}"
+                frameborder="0"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </metal:main>
+  </body>
+</html>
