@@ -2,11 +2,13 @@
 
 from collective.testimony import _
 from plone.app.textfield import RichText
+from plone.app.z3cform.widget import AjaxSelectFieldWidget
+from plone.autoform import directives
+from plone.dexterity.browser import view
 from plone.dexterity.content import Container
 from plone.supermodel import model
 from zope import schema
 from zope.interface import implements
-from plone.dexterity.browser import view
 
 
 class ITestimony(model.Schema):
@@ -32,7 +34,17 @@ class ITestimony(model.Schema):
         required=False,
     )
 
-    #todo :  field thèmes (mots-clés)
+    theme = schema.Tuple(
+        title=u'Theme',
+        value_type=schema.TextLine(),
+        required=False,
+        missing_value=(),
+    )
+    directives.widget(
+        'theme',
+        AjaxSelectFieldWidget,
+        vocabulary='plone.app.vocabularies.Keywords'
+    )
 
     in_the_random_testimony = schema.Bool(
         title=_(u"In the random testimony?"),

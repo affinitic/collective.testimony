@@ -8,7 +8,7 @@
 
   <browser:page
     for=".testimony.ITestimony"
-    name="view"
+    name="view2"
     class=".testimony.TestimonyView"
     template="templates/testimony.pt"
     permission="zope2.View"
