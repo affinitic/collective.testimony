@@ -10,16 +10,15 @@
       <div class="content-block">
         <div class="content-block-container">
           <div class="content-block-container-background">
-            <div class="content-block-body">
-              <div tal:content="structure context/textual_testimony/output" />
-              <iframe
-                width="540"
-                height="304"
-                src=""
-                tal:attributes="src string:${context/url}"
-                frameborder="0"
-                allowfullscreen>
-              </iframe>
+            <div class="content-block-body"
+            tal:define="title context/Title;
+                        textual context/textual_testimony;
+                        url context/url;
+                        video_transcript context/video_transcript">
+              <h1 tal:content="title"></h1>
+              <div tal:content="structure textual/output" tal:condition="textual"/>
+              <div tal:replace="structure view/get_embed_link"/>
+              <div tal:content="structure video_transcript/output" tal:condition="video_transcript"/>
             </div>
           </div>
         </div>

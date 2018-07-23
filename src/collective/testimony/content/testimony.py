@@ -1,14 +1,17 @@
 # -*- coding: utf-8 -*-
 
-from collective.testimony import _
+from zope import schema
+
+from embeddify import Embedder
 from plone.app.textfield import RichText
 from plone.app.z3cform.widget import AjaxSelectFieldWidget
 from plone.autoform import directives
 from plone.dexterity.browser import view
 from plone.dexterity.content import Container
 from plone.supermodel import model
-from zope import schema
 from zope.interface import implements
+
+from collective.testimony import _
 
 
 class ITestimony(model.Schema):
@@ -73,3 +76,8 @@ class Testimony(Container):
 
 class TestimonyView(view.DefaultView):
     """TestimonyView"""
+    def get_embed_link(self):
+        embedder = Embedder()
+        if self.context.url:
+            return embedder(self.context.url, params=dict(autoplay=True))
+        return ""
