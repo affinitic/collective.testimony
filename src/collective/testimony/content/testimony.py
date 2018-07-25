@@ -6,6 +6,7 @@ from embeddify import Embedder
 from plone.app.textfield import RichText
 from plone.app.z3cform.widget import AjaxSelectFieldWidget
 from plone.autoform import directives
+from plone.indexer.decorator import indexer
 from plone.dexterity.browser import view
 from plone.dexterity.content import Container
 from plone.supermodel import model
@@ -81,3 +82,10 @@ class TestimonyView(view.DefaultView):
         if self.context.url:
             return embedder(self.context.url, params=dict(autoplay=True))
         return ""
+
+
+@indexer(ITestimony)
+def testimony_url(object, **kw):
+    if object.url:
+        return True
+    return False

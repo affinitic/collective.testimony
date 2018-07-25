@@ -15,5 +15,7 @@
     layer="..interfaces.ICollectiveTestimonyLayer"
     />
 
+  <adapter name="is_video" factory=".testimony.testimony_url" />
+
 
 </configure>
