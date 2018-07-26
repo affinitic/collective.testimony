@@ -89,3 +89,10 @@ def testimony_url(object, **kw):
     if object.url:
         return True
     return False
+
+
+@indexer(ITestimony)
+def testimony_textual_testimony(object, **kw):
+    if object.textual_testimony:
+        return True
+    return False

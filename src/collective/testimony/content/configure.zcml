@@ -17,5 +17,7 @@
 
   <adapter name="is_video" factory=".testimony.testimony_url" />
 
+  <adapter name="is_text" factory=".testimony.testimony_textual_testimony" />
+
 
 </configure>
