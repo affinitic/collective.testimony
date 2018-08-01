@@ -1,6 +1,3 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -15,7 +12,7 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: collective.testimony\n"
+"Domain: DOMAIN\n"
 
 #: ../content/testimony.py:69
 msgid "Age"
@@ -23,19 +20,19 @@ msgstr ""
 
 #: ../content/testimony.py:22
 msgid "Domain"
-msgstr ""
+msgstr "Theme"
 
 #: ../content/testimony.py:59
 msgid "First name"
-msgstr ""
+msgstr "Prénom"
 
 #: ../content/testimony.py:64
 msgid "Function"
-msgstr ""
+msgstr "Fonction"
 
 #: ../content/testimony.py:54
 msgid "In the random testimony?"
-msgstr ""
+msgstr "Est-ce un témoignage aléatoire"
 
 #: ../configure.zcml:31
 msgid "Installs the collective.testimony add-on."
@@ -43,11 +40,11 @@ msgstr ""
 
 #: ../content/testimony.py:37
 msgid "Textual testimony"
-msgstr ""
+msgstr "Témoignage textuel"
 
 #: ../content/testimony.py:27
 msgid "URL address of the video"
-msgstr ""
+msgstr "URL de la vidéo"
 
 #: ../configure.zcml:40
 msgid "Uninstalls the collective.testimony add-on."
@@ -55,7 +52,7 @@ msgstr ""
 
 #: ../content/testimony.py:32
 msgid "Video transcript"
-msgstr ""
+msgstr "Transcription de la vidéo"
 
 #: ../configure.zcml:31
 msgid "collective.testimony"
