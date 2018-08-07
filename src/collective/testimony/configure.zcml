@@ -13,9 +13,13 @@
   -->
   <!--<includeDependencies package="." />-->
 
+  <include package="plone.tiles" file="meta.zcml" />
+
+
   <include package=".browser" />
 
   <include package=".content" />
+  <include package=".tile" />
 
   <include file="permissions.zcml" />
 

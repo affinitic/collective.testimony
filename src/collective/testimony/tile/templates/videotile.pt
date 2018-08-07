@@ -1,0 +1,14 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      i18n:domain="plone">
+      <body>
+        <div tal:define="data python: view.get_value();
+                               url data/url;
+                               video_description data/video_description;">
+          <div tal:replace="structure python: view.get_embed_link(url)"/>
+          <div tal:content="structure video_description/output"></div>
+        </div>
+      </body>
+</html>

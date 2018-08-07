@@ -1,0 +1,12 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      i18n:domain="plone">
+  <body>
+      <div tal:define="data python: view.get_value();
+               text data/text;">
+            <div tal:content="structure data/text/output"></div>
+      </div>
+  </body>
+</html>
