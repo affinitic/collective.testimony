@@ -13,7 +13,7 @@
     add_permission = 'cmf.ModifyPortalContent'
     permission="zope2.View"
     for="*"
-    layer="..interfaces.ICollectiveTestimonyLayer"
+    layer="..interfaces.ICollectiveTestimonyMosaicLayer"
   />
 
   <plone:tile
@@ -24,7 +24,7 @@
     add_permission = 'cmf.ModifyPortalContent'
     permission="zope2.View"
     for="*"
-    layer="..interfaces.ICollectiveTestimonyLayer"
+    layer="..interfaces.ICollectiveTestimonyMosaicLayer"
   />
 
 

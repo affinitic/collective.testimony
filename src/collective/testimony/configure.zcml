@@ -43,6 +43,16 @@
       post_handler=".setuphandlers.uninstall"
       />
 
+
+  <genericsetup:registerProfile
+    name="mosaic"
+    title="collective.testimony.mosaic"
+    directory="profiles/mosaic"
+    description="Installs the collective.testimony.mosaic add-on."
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    post_handler=".setuphandlers.post_install"
+  />
+
   <utility
       factory=".setuphandlers.HiddenProfiles"
       name="collective.testimony-hiddenprofiles"

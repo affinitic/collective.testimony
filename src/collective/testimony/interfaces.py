@@ -6,3 +6,7 @@ from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 class ICollectiveTestimonyLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
+
+
+class ICollectiveTestimonyMosaicLayer(ICollectiveTestimonyLayer):
+    """Marker interface that defines a browser layer."""
