@@ -5,24 +5,34 @@
       lang="en"
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="collective.testimony">
-  <body>
-    <metal:main fill-slot="main">
-      <div class="content-block">
-        <div class="content-block-container">
-          <div class="content-block-container-background">
-            <div class="content-block-body"
-            tal:define="title context/Title;
-                        textual context/textual_testimony;
-                        url context/url;
-                        video_transcript context/video_transcript">
-              <h1 tal:content="title"></h1>
-              <div tal:content="structure textual/output" tal:condition="textual"/>
-              <div tal:replace="structure view/get_embed_link"/>
-              <div tal:content="structure video_transcript/output" tal:condition="video_transcript"/>
+    <body>
+        <metal:main fill-slot="main">
+        <div class="content-block">
+            <div class="content-block-container">
+                <div class="content-block-container-background">
+                    <div class="content-block-body"
+                         tal:define="title context/title;
+                         textual context/textual_testimony;
+                         url context/url;
+                         video_transcript context/video_transcript">
+                        <h1 tal:content="title"></h1>
+                        <div class="textual-testimony" tal:condition="textual">
+                            <div class="textual-testimony-text" tal:content="structure textual/output"></div>
+                            <div class="textual-testimony-infos">
+                                <div tal:content="context/first_name"></div>
+                                <div tal:condition="context/age">, <span tal:content="context/age"></span> ans</div>
+                            </div>
+                            <div class="textual-testimony-function" tal:content="context/function"></div>
+                        </div>
+                        <div class="video" tal:replace="structure view/get_embed_link"></div>
+                        <div class="video-transcript" tal:condition="video_transcript">
+                            <h2>Retranscription de la vidéo</h2>
+                            <div tal:content="structure video_transcript/output"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </metal:main>
-  </body>
+        </metal:main>
+    </body>
 </html>
