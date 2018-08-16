@@ -19,8 +19,7 @@
                         <div class="textual-testimony" tal:condition="textual">
                             <div class="textual-testimony-text" tal:content="structure textual/output"></div>
                             <div class="textual-testimony-infos">
-                                <div tal:content="context/first_name"></div>
-                                <div tal:condition="context/age">, <span tal:content="context/age"></span> ans</div>
+                                <span tal:content="context/first_name"></span><span tal:condition="context/age">, <span tal:content="context/age"></span> ans</span>
                             </div>
                             <div class="textual-testimony-function" tal:content="context/function"></div>
                         </div>
