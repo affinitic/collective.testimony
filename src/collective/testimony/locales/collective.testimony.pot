@@ -21,6 +21,10 @@ msgstr ""
 msgid "Age"
 msgstr ""
 
+#: ../content/testimony.py:70
+msgid "Displayed Function"
+msgstr ""
+
 #: ../content/testimony.py:22
 msgid "Domain"
 msgstr ""
@@ -31,6 +35,14 @@ msgstr ""
 
 #: ../content/testimony.py:64
 msgid "Function"
+msgstr ""
+
+#: ../content/testimony.py:71
+msgid "Function displayed on results / testimonies"
+msgstr ""
+
+#: ../content/testimony.py:65
+msgid "Function for search filters (gender-inclusive)"
 msgstr ""
 
 #: ../content/testimony.py:54

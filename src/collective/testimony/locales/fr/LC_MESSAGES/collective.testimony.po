@@ -18,6 +18,10 @@ msgstr ""
 msgid "Age"
 msgstr ""
 
+#: ../content/testimony.py:70
+msgid "Displayed Function"
+msgstr "Fonction affichée"
+
 #: ../content/testimony.py:22
 msgid "Domain"
 msgstr "Theme"
@@ -29,6 +33,14 @@ msgstr "Prénom"
 #: ../content/testimony.py:64
 msgid "Function"
 msgstr "Fonction"
+
+#: ../content/testimony.py:71
+msgid "Function displayed on results / testimonies"
+msgstr "Fonction affichée dans les témoignages et résultats de recherche"
+
+#: ../content/testimony.py:65
+msgid "Function for search filters (gender-inclusive)"
+msgstr "Fonction présentée comme filtre de recherche (inclusive)"
 
 #: ../content/testimony.py:54
 msgid "In the random testimony?"

@@ -62,6 +62,13 @@ class ITestimony(model.Schema):
 
     function = schema.TextLine(
         title=_(u"Function"),
+        description=_(u"Function for search filters (gender-inclusive)"),
+        required=False
+    )
+
+    displayed_function = schema.TextLine(
+        title=_(u"Displayed Function"),
+        description=_(u"Function displayed on results / testimonies"),
         required=False
     )
 
