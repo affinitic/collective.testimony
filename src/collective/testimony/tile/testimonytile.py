@@ -57,4 +57,4 @@ class VideoTile(TestimonyTile):
 
     def get_embed_link(self, url):
         embedder = Embedder()
-        return embedder(url, params=dict(autoplay=True))
+        return embedder(url, params=dict(autoplay=False))
