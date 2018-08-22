@@ -1,7 +1,8 @@
-from random import randint
+# -*- coding: utf-8 -*-
 
 from embeddify import Embedder
 from plone.tiles.tile import Tile
+from random import randint
 
 
 def get_random_testimony(context, video_only=False):
