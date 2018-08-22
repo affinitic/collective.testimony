@@ -4,24 +4,56 @@ from embeddify import Embedder
 from plone.tiles.tile import Tile
 
 
-def get_data(context):
-    brains = context.portal_catalog({'in_the_random_testimony': {'query': True}})
+def get_random_testimony(context, video_only=False):
+    query = {}
+    query['in_the_random_testimony'] = True
+    if video_only:
+        query['is_video'] = True
+    brains = context.portal_catalog(query)
+    if not brains:
+        return None
     brain = brains[randint(0, len(brains) - 1)]
     return brain.getObject()
 
 
-class TextualTile(Tile):
+class TestimonyTile(Tile):
+
+    elected_testimony = None
+    video_only = False
+
+    @property
+    def available(self):
+        return self.testimony is not None
+
+    @property
+    def testimony(self):
+        if self.elected_testimony is None:
+            self.elected_testimony = get_random_testimony(
+                self.context,
+                video_only=self.video_only,
+            )
+        return self.elected_testimony
+
+
+class TextualTile(TestimonyTile):
 
     def get_value(self):
-        data = get_data(self.context)
-        return {'absolute_url': data.absolute_url(), 'text': data.textual_testimony}
+        return {
+            'url': self.testimony.absolute_url(),
+            'text': self.testimony.textual_testimony,
+        }
 
 
-class VideoTile(Tile):
+class VideoTile(TestimonyTile):
+
+    video_only = True
 
     def get_value(self):
-        data = get_data(self.context)
-        return {'absolute_url': data.absolute_url(), 'url': data.url, 'video_description': data.video_transcript, }
+        return {
+            'url': self.testimony.absolute_url(),
+            'video_url': self.testimony.url,
+            'video_description': self.testimony.video_transcript,
+        }
 
     def get_embed_link(self, url):
         embedder = Embedder()

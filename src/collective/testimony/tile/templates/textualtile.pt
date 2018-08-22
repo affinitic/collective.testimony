@@ -4,9 +4,11 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       i18n:domain="plone">
   <body>
+   <tal:block condition="view/available">
       <div tal:define="data python: view.get_value();
                text data/text;">
             <div tal:content="structure data/text/output"></div>
       </div>
+   </tal:block>
   </body>
 </html>
