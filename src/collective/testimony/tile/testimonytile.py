@@ -40,7 +40,7 @@ class TextualTile(TestimonyTile):
     def get_value(self):
         return {
             'url': self.testimony.absolute_url(),
-            'text': self.testimony.textual_testimony,
+            'text': self.testimony.description,
         }
 
 
