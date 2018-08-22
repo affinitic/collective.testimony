@@ -7,7 +7,7 @@
    <tal:block condition="view/available">
       <div tal:define="data view/get_value;
                        text data/text;">
-            <div tal:content="structure data/text/output"></div>
+            <div tal:content="text"></div>
       </div>
    </tal:block>
   </body>
