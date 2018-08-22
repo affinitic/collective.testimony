@@ -5,9 +5,9 @@
       i18n:domain="plone">
       <body>
        <tal:block condition="view/available">
-        <div tal:define="data python: view.get_value();
-                               video_url data/video_url;
-                               video_description data/video_description;">
+        <div tal:define="data view/get_value;
+                         video_url data/video_url;
+                         video_description data/video_description;">
           <div tal:replace="structure python: view.get_embed_link(video_url)"/>
           <div tal:content="structure video_description/output"></div>
         </div>
