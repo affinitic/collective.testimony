@@ -57,6 +57,7 @@ class VideoTile(TestimonyTile):
             'video_url': self.testimony.url,
             'video_description': self.testimony.video_transcript,
             'function': self.testimony.displayed_function,
+            'sector': self.testimony.sector,
         }
 
     def get_embed_link(self, url):
