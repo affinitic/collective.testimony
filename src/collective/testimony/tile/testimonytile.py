@@ -42,6 +42,8 @@ class TextualTile(TestimonyTile):
         return {
             'url': self.testimony.absolute_url(),
             'text': self.testimony.description,
+            'name': self.testimony.first_name,
+            'age': self.testimony.age,
         }
 
 
@@ -54,6 +56,7 @@ class VideoTile(TestimonyTile):
             'url': self.testimony.absolute_url(),
             'video_url': self.testimony.url,
             'video_description': self.testimony.video_transcript,
+            'function': self.testimony.displayed_function,
         }
 
     def get_embed_link(self, url):

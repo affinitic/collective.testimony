@@ -6,8 +6,19 @@
   <body>
    <tal:block condition="view/available">
       <div tal:define="data view/get_value;
-                       text data/text;">
-            <div tal:content="text"></div>
+                       url data/url;
+                       text data/text;
+                       name data/name;
+                       age data/age;"
+           class="textual-testimony">
+          <a href="" tal:attributes="href url">
+            <div class="textual-testimony-text">
+                <p tal:content="text"></p>
+            </div>
+            <div class="textual-testimony-infos">
+                <span tal:content="name"></span><span tal:condition="age">, <span tal:content="age"></span> ans</span>
+            </div>
+          </a>
       </div>
    </tal:block>
   </body>

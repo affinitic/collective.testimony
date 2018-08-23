@@ -13,7 +13,6 @@
                     <div class="content-block-body"
                          tal:define="title context/title;
                          textual context/textual_testimony;
-                         url context/url;
                          video_transcript context/video_transcript">
                         <h1 tal:content="title"></h1>
                         <div class="textual-testimony" tal:condition="textual">

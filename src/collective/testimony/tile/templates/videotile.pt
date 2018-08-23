@@ -7,9 +7,21 @@
        <tal:block condition="view/available">
         <div tal:define="data view/get_value;
                          video_url data/video_url;
-                         video_description data/video_description;">
-          <div tal:replace="structure python: view.get_embed_link(video_url)"/>
-          <div tal:content="structure video_description/output"></div>
+                         function data/function;
+                         video_description data/video_description;"
+             class="video-testimony">
+            <div class="video-testimony-content">
+                <div class="video-testimony-video">
+                    <div tal:replace="structure python: view.get_embed_link(video_url)"></div>
+                </div>
+                <div class="video-testimony-text">
+                    <h2>Témoignages</h2>
+                    <ul>
+                        <li tal:content="function"></li>
+                    </ul>
+                </div>
+            </div>
+            <div  class="video-testimony-transcript" tal:content="structure video_description/output"></div>
         </div>
        </tal:block>
       </body>
