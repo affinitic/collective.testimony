@@ -39,11 +39,15 @@ class TestimonyTile(Tile):
 class TextualTile(TestimonyTile):
 
     def get_value(self):
+        testimony = self.testimony
+        text = testimony.textual_testimony.output
+        if testimony.description:
+            text = u"<p>{0}</p>".format(testimony.description)
         return {
-            'url': self.testimony.absolute_url(),
-            'text': self.testimony.description,
-            'name': self.testimony.first_name,
-            'age': self.testimony.age,
+            'url': testimony.absolute_url(),
+            'text': text,
+            'name': testimony.first_name,
+            'age': testimony.age,
         }
 
 
@@ -52,12 +56,13 @@ class VideoTile(TestimonyTile):
     video_only = True
 
     def get_value(self):
+        testimony = self.testimony
         return {
-            'url': self.testimony.absolute_url(),
-            'video_url': self.testimony.url,
-            'video_description': self.testimony.video_transcript,
-            'function': self.testimony.displayed_function,
-            'sector': self.testimony.sector,
+            'url': testimony.absolute_url(),
+            'video_url': testimony.url,
+            'video_description': testimony.video_transcript,
+            'function': testimony.displayed_function,
+            'sector': testimony.sector,
         }
 
     def get_embed_link(self, url):
