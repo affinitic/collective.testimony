@@ -5,9 +5,11 @@ from plone.tiles.tile import Tile
 from random import randint
 
 
-def get_random_testimony(context, video_only=False):
+def get_random_testimony(context, text_only=False, video_only=False):
     query = {}
     query['in_the_random_testimony'] = True
+    if text_only:
+        query['is_text'] = True
     if video_only:
         query['is_video'] = True
     brains = context.portal_catalog(query)
@@ -20,6 +22,7 @@ def get_random_testimony(context, video_only=False):
 class TestimonyTile(Tile):
 
     elected_testimony = None
+    text_only = False
     video_only = False
 
     @property
@@ -31,12 +34,15 @@ class TestimonyTile(Tile):
         if self.elected_testimony is None:
             self.elected_testimony = get_random_testimony(
                 self.context,
+                text_only=self.text_only,
                 video_only=self.video_only,
             )
         return self.elected_testimony
 
 
 class TextualTile(TestimonyTile):
+
+    text_only = True
 
     def get_value(self):
         testimony = self.testimony
