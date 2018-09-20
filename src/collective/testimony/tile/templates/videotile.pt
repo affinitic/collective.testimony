@@ -21,7 +21,9 @@
                     </ul>
                 </div>
             </div>
-            <div  class="video-testimony-transcript" tal:content="structure video_description/output"></div>
+            <div class="video-testimony-transcript"
+                 tal:condition="video_description"
+                 tal:content="structure video_description/output"></div>
         </div>
        </tal:block>
       </body>
