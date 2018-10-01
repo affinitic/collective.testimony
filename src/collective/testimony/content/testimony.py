@@ -42,7 +42,7 @@ class ITestimony(model.Schema):
     )
 
     theme = schema.Tuple(
-        title=u'Theme',
+        title=_(u"Theme"),
         value_type=schema.TextLine(),
         required=False,
         missing_value=(),
