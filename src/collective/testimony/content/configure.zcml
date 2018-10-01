@@ -19,5 +19,6 @@
 
   <adapter name="is_text" factory=".testimony.testimony_textual_testimony" />
 
+  <adapter name="SearchableText" factory=".testimony.searchabletext_testimony"/>
 
 </configure>

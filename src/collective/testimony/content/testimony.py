@@ -1,15 +1,18 @@
 # -*- coding: utf-8 -*-
 
-from zope import schema
+from Products.CMFPlone.utils import getToolByName
+from Products.CMFPlone.utils import safe_unicode
 
 from embeddify import Embedder
 from plone.app.textfield import RichText
+from plone.app.textfield.value import IRichTextValue
 from plone.app.z3cform.widget import AjaxSelectFieldWidget
 from plone.autoform import directives
-from plone.indexer.decorator import indexer
 from plone.dexterity.browser import view
 from plone.dexterity.content import Container
+from plone.indexer.decorator import indexer
 from plone.supermodel import model
+from zope import schema
 from zope.interface import implements
 
 from collective.testimony import _
@@ -103,3 +106,30 @@ def testimony_textual_testimony(object, **kw):
     if object.textual_testimony:
         return True
     return False
+
+
+@indexer(ITestimony)
+def searchabletext_testimony(object, **kw):
+    result = []
+
+    fields = ['video_transcript',
+              'textual_testimony',
+              'displayed_function',
+              'first_name',
+              'theme',
+              'domain']
+    for field_name in fields:
+        value = getattr(object, field_name, None)
+        if type(value) is unicode:
+            text = safe_unicode(value).encode('utf-8')
+            result.append(text)
+        elif IRichTextValue.providedBy(value):
+            transforms = getToolByName(object, 'portal_transforms')
+            text = transforms.convertTo(
+                'text/plain',
+                safe_unicode(value.raw).encode('utf-8'),
+                mimetype=value.mimeType,
+            ).getData().strip()
+            result.append(text)
+
+    return ' '.join(result)
