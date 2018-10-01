@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-08-01 08:41+0000\n"
+"POT-Creation-Date: 2018-10-01 10:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,62 +17,70 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.testimony\n"
 
-#: ../content/testimony.py:69
+#: ../content/testimony.py:79
 msgid "Age"
 msgstr ""
 
-#: ../content/testimony.py:70
+#: ../content/testimony.py:73
 msgid "Displayed Function"
 msgstr ""
 
-#: ../content/testimony.py:22
+#: ../content/testimony.py:25
 msgid "Domain"
 msgstr ""
 
-#: ../content/testimony.py:59
+#: ../content/testimony.py:62
 msgid "First name"
 msgstr ""
 
-#: ../content/testimony.py:64
+#: ../content/testimony.py:67
 msgid "Function"
 msgstr ""
 
-#: ../content/testimony.py:71
+#: ../content/testimony.py:74
 msgid "Function displayed on results / testimonies"
 msgstr ""
 
-#: ../content/testimony.py:65
+#: ../content/testimony.py:68
 msgid "Function for search filters (gender-inclusive)"
 msgstr ""
 
-#: ../content/testimony.py:54
+#: ../content/testimony.py:57
 msgid "In the random testimony?"
 msgstr ""
 
-#: ../configure.zcml:31
+#: ../configure.zcml:35
 msgid "Installs the collective.testimony add-on."
 msgstr ""
 
-#: ../content/testimony.py:37
+#: ../configure.zcml:54
+msgid "Installs the collective.testimony.mosaic add-on."
+msgstr ""
+
+#: ../content/testimony.py:40
 msgid "Textual testimony"
 msgstr ""
 
-#: ../content/testimony.py:27
+#: ../content/testimony.py:30
 msgid "URL address of the video"
 msgstr ""
 
-#: ../configure.zcml:40
+#: ../configure.zcml:44
 msgid "Uninstalls the collective.testimony add-on."
 msgstr ""
 
-#: ../content/testimony.py:32
+#: ../content/testimony.py:35
 msgid "Video transcript"
 msgstr ""
 
-#: ../configure.zcml:31
+#: ../configure.zcml:35
 msgid "collective.testimony"
 msgstr ""
 
-#: ../configure.zcml:40
+#: ../configure.zcml:44
 msgid "collective.testimony (uninstall)"
+msgstr ""
+
+#: ../configure.zcml:54
+msgid "collective.testimony.mosaic"
 msgstr ""
