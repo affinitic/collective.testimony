@@ -24,7 +24,7 @@ msgstr "Fonction affichée"
 
 #: ../content/testimony.py:22
 msgid "Domain"
-msgstr "Theme"
+msgstr "Domaine"
 
 #: ../content/testimony.py:59
 msgid "First name"
