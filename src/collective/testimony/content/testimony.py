@@ -112,7 +112,9 @@ def testimony_textual_testimony(object, **kw):
 def searchabletext_testimony(object, **kw):
     result = []
 
-    fields = ['video_transcript',
+    fields = ['title',
+              'description',
+              'video_transcript',
               'textual_testimony',
               'displayed_function',
               'first_name',
