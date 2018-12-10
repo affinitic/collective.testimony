@@ -17,9 +17,9 @@
 
 
   <include package=".browser" />
-
   <include package=".content" />
   <include package=".tile" />
+  <include package=".viewlet" />
 
   <include file="permissions.zcml" />
 

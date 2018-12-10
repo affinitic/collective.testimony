@@ -5,13 +5,14 @@
       i18n:domain="plone">
   <body>
    <tal:block condition="view/available">
-      <div tal:define="data view/get_value;
-                       url data/url;
-                       text data/text;
-                       name data/name;
-                       age data/age;"
-           class="textual-testimony">
-          <a href="" tal:attributes="href url">
+      <div tal:define="data view/get_value;"
+           class="textual-testimony"
+           condition="data">
+          <a href="" tal:attributes="href url"
+                     tal:define="url data/url;
+                                 text data/text;
+                                 name data/name;
+                                 age data/age;">
             <div class="textual-testimony-text">
                 <p tal:replace="structure text"></p>
             </div>
