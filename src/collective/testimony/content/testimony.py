@@ -13,7 +13,7 @@ from plone.dexterity.content import Container
 from plone.indexer.decorator import indexer
 from plone.supermodel import model
 from zope import schema
-from zope.interface import implements
+from zope.interface import implementer
 
 from collective.testimony import _
 
@@ -81,8 +81,9 @@ class ITestimony(model.Schema):
     )
 
 
+@implementer(ITestimony)
 class Testimony(Container):
-    implements(ITestimony)
+    """"""
 
 
 class TestimonyView(view.DefaultView):
