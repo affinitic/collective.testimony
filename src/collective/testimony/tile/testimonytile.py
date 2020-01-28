@@ -46,7 +46,9 @@ class TextualTile(TestimonyTile):
 
     def get_value(self):
         testimony = self.testimony
-        text = testimony.textual_testimony.output
+        text = ""
+        if testimony.textual_testimony:
+            text = testimony.textual_testimony.output
         if testimony.description:
             text = u"<p>{0}</p>".format(testimony.description)
         return {
