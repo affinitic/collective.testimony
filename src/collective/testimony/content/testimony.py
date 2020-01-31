@@ -83,7 +83,7 @@ class ITestimony(model.Schema):
 
 @implementer(ITestimony)
 class Testimony(Container):
-    """"""
+    """Testimony content type"""
 
 
 class TestimonyView(view.DefaultView):
