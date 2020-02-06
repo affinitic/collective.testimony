@@ -3,4 +3,10 @@
   <index name="in_the_random_testimony" meta_type="BooleanIndex">
         <indexed_attr value="in_the_random_testimony"/>
   </index>
+  <index name="is_video" meta_type="BooleanIndex">
+        <indexed_attr value="is_video"/>
+  </index>
+  <index name="is_text" meta_type="BooleanIndex">
+        <indexed_attr value="is_text"/>
+  </index>
 </object>
